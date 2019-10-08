@@ -1,0 +1,8 @@
+function t_wbt = wetbulb(p,t,string,val)
+w = humidity_ratio(p,t,string,val);
+t_wbt = fminbnd(@(temp) sample(temp, [w, t, p]), t);
+end
+
+function err = sample(temp, con)
+err = con(1) - humidity_ratio(con(3), con(2), 'dpt',temp);
+end

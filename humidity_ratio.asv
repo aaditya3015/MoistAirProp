@@ -1,0 +1,16 @@
+function w = humidity_ratio(p, t, string, val)
+%this functions calculates the humidity ratio for inputs
+% p = total pressure of the air in kPa
+% t = Dry Bulb Temperatue in K
+% rh = Relative Humidity < 1 1 = 100% relative humidity
+if string == "rh"
+    p_ws = psat_water(t);
+    w = 0.621945*rh*(p_ws)/(p-rh*p_ws);\
+elseif string == 'wbt'
+    asdf;
+elseif string == 'dpt'
+    asd;
+else
+    msg = 'use "rh" for'
+end
+end
