@@ -1,4 +1,4 @@
-function t_dpt = dewpoint(p,t,string,val)
+function t_dpt = dewpoint(p,t,str,val)
     %this function evaluates the dewpoint temperature of the most air
     % p -> Total Pressure in kPa
     % t-> dry bulb temperature in K
@@ -9,7 +9,7 @@ function t_dpt = dewpoint(p,t,string,val)
 if strcmp(str,"w")
     w = val;
 else
-w = humidity_ratio(p, t, string, val);
+w = humidity_ratio(p, t, str, val);
 end
 p_w = p/(0.621945/w +1);
 t_dpt = fzero(@(temp) sample(temp,p_w),t-10);

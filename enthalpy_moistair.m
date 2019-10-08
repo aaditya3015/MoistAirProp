@@ -11,7 +11,7 @@ if strcmp(str,"w")
     w = val;
     h = 1.006*(t-273.15)+ w*(2501+1.86*(t-273.15));
 else
-w = humidity_ratio(p, t, string, val);
+w = humidity_ratio(p, t, str, val);
 h = 1.006*(t-273.15)+ w*(2501+1.86*(t-273.15));
 end
 end
