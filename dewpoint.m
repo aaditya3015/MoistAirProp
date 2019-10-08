@@ -6,7 +6,7 @@ function t_dpt = dewpoint(p,t,string,val)
     %           "rh" for relative humidity between 0 and 1
     %           "w" for humidity ratio
     % val -> value of the string kg_vap/kg_dryair
-if string == 'w'
+if strcmp(str,"w")
     w = val;
 else
 w = humidity_ratio(p, t, string, val);

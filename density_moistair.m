@@ -1,4 +1,4 @@
-function rho = density_moistair(p,t,string,val)
+function rho = density_moistair(p,t,str,val)
     %this function evaluates the dewpoint temperature of the most air
     % p -> Total Pressure in kPa
     % t-> dry bulb temperature in K
@@ -7,12 +7,11 @@ function rho = density_moistair(p,t,string,val)
     %           "rh" for relative humidity between 0 and 1
     %           "w" for humidity ratio
     % val -> value of the string kg_vap/kg_dryair
-if string == 'w'
+if strcmp(str,"w")
     w = val;
 else
-w = humidity_ratio(p, t, string, val);
+w = humidity_ratio(p, t, str, val);
 end
 v = 0.287042*(t)*(1 + 1.607858*w)/p;
 rho = 1/v;
 end
-s

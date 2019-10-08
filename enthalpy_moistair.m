@@ -7,7 +7,7 @@ function h = enthalpy_moistair(p, t, str, val)
     %           "rh" for relative humidity between 0 and 1
     %           "w" for humidity ratio
     % val -> value of the string kg_vap/kg_dryair
-if str == 'w'
+if strcmp(str,"w")
     w = val;
     h = 1.006*(t-273.15)+ w*(2501+1.86*(t-273.15));
 else

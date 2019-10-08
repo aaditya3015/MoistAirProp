@@ -7,7 +7,7 @@ function t_wbt = wetbulb(p,t,str,val)
     %           "w" for humidity ratio
     % val -> value of the string kg_vap/kg_dryair
 w = humidity_ratio(p,t,string,val);
-if str == 'dpt'
+if strcmp(str,"dpt")
     dpt = val;
 else
 dpt = dewpoint(p,t,string,val);
