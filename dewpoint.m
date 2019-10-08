@@ -1,5 +1,11 @@
 function t_dpt = dewpoint(p,t,string,val)
-%calcualtes the dew point of the air
+    %this function evaluates the dewpoint temperature of the most air
+    % p -> Total Pressure in kPa
+    % t-> dry bulb temperature in K
+    % string -> "wbt"for wetbulb temperature in K
+    %           "rh" for relative humidity between 0 and 1
+    %           "w" for humidity ratio
+    % val -> value of the string kg_vap/kg_dryair
 if string == 'w'
     w = val;
 else

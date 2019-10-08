@@ -1,6 +1,13 @@
-function t_wbt = wetbulb(p,t,string,val)
+function t_wbt = wetbulb(p,t,str,val)
+    %this functions calculates the wetbulb temperature of the moistair
+    % p -> Total Pressure in kPa
+    % t-> dry bulb temperature in K
+    % string -> "dpt" for dewpoint temperature in K
+    %           "rh" for relative humidity between 0 and 1
+    %           "w" for humidity ratio
+    % val -> value of the string kg_vap/kg_dryair
 w = humidity_ratio(p,t,string,val);
-if string == "dpt"
+if str == 'dpt'
     dpt = val;
 else
 dpt = dewpoint(p,t,string,val);

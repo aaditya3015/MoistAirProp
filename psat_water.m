@@ -1,4 +1,6 @@
 function psat = psat_water(T)
+    % this function calculates the sturation vapour pressure of the water
+    % See ashrae handbook - fundamentals - chapter1 for reference
 C1 = -5.6745359E+03;
 C2 = 6.3925247;
 C3 = -9.6778430E-03;
