@@ -12,9 +12,5 @@ else
 w = humidity_ratio(p, t, str, val);
 end
 p_w = p/(0.621945/w +1);
-t_dpt = fzero(@(temp) sample(temp,p_w),t-10);
-end
-
-function err = sample(t,p_w)
-err = psat_water(t) - p_w;
+t_dpt = fzero(@(temp) (psat_water(temp) - p_w),[t-100,t]);
 end
